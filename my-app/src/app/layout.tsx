@@ -1,3 +1,5 @@
+import { Nav } from "./_components/Nav";
+
 export default function RootLayout({
   children,
 }: {
@@ -7,6 +9,9 @@ export default function RootLayout({
     <html>
       <body>
         <h1>Layout</h1>
+        <div>
+          <Nav />
+        </div>
         <main>{children}</main>
       </body>
     </html>
