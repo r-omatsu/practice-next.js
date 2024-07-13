@@ -10,6 +10,9 @@ export function Nav() {
         <li>
           <Link href="/company-info">会社概要</Link>
         </li>
+        <li>
+          <Link href="/categories">カテゴリー一覧</Link>
+        </li>
       </ul>
     </nav>
   );

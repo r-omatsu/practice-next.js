@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,10 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "next": ["./node_modules/next"],
-      "react": ["./node_modules/react"],
-      "react-dom": ["./node_modules/react-dom"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
