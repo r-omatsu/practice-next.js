@@ -12,7 +12,7 @@
     "clean": "rimraf .next/cache/fetch-cache",
     "clean-dev": "run-s clean dev",
     "clean-build": "run-s clean build",
-    "clean-start": "run-s clean build start",
+    "clean-start": "rm -rf .next/cache/fetch-cache && npm run build && npm run start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "format": "run-s format:*",
