@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.css";
+import { IconButton } from "./IconButton";
 
 function getAriaCurrent(flag: boolean) {
   return flag ? { "aria-current": "page" as const } : undefined;
@@ -10,6 +11,9 @@ function getAriaCurrent(flag: boolean) {
 
 export function Nav() {
   const pathName = usePathname();
+  const openModal = () => {
+    alert("モーダルを開きます");
+  };
   return (
     <nav className={styles.nav}>
       <ul>
@@ -35,6 +39,7 @@ export function Nav() {
           </Link>
         </li>
       </ul>
+      <IconButton onClick={openModal}>写真を投稿する</IconButton>
     </nav>
   );
 }
