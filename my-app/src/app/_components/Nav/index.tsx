@@ -1,17 +1,38 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./style.module.css";
+
+function getAriaCurrent(flag: boolean) {
+  return flag ? { "aria-current": "page" as const } : undefined;
+}
 
 export function Nav() {
+  const pathName = usePathname();
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
-          <Link href="/">トップ</Link>
+          <Link href="/" {...getAriaCurrent(pathName === "/")}>
+            トップ
+          </Link>
         </li>
         <li>
-          <Link href="/company-info">会社概要</Link>
+          <Link
+            href="/company-info"
+            {...getAriaCurrent(pathName === "/company-info")}
+          >
+            会社概要
+          </Link>
         </li>
         <li>
-          <Link href="/categories">カテゴリー一覧</Link>
+          <Link
+            href="/categories"
+            {...getAriaCurrent(pathName.startsWith("/categories"))}
+          >
+            カテゴリー一覧
+          </Link>
         </li>
       </ul>
     </nav>
