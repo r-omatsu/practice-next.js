@@ -1,5 +1,6 @@
 import { Photo } from "@/app/utils/type";
 import { Metadata, ResolvingMetadata } from "next";
+import { LikeButton } from "./LikeButton";
 
 type Props = {
   params: { photoId: string };
@@ -27,5 +28,10 @@ export async function generateMetadata(
 }
 
 export default function Page({ params }: Props) {
-  return <p>PhotoId: {params.photoId}</p>;
+  return (
+    <div>
+      <p>PhotoId: {params.photoId}</p>
+      <LikeButton photoId={params.photoId} />
+    </div>
+  );
 }
