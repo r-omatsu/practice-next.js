@@ -38,6 +38,14 @@ export function Nav() {
             カテゴリー一覧
           </Link>
         </li>
+        <li>
+          <Link
+            href="/accounts"
+            {...getAriaCurrent(pathName.startsWith("/accounts"))}
+          >
+            アカウント
+          </Link>
+        </li>
       </ul>
       <IconButton onClick={openModal}>写真を投稿する</IconButton>
     </nav>
