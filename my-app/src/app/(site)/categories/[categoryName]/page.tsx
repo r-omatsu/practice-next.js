@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { getPage } from "@/app/utils";
+import { notFound, useRouter } from "next/navigation";
 
 type Props = {
   params: { categoryName: string };
@@ -8,7 +9,12 @@ type Props = {
 };
 
 export default function Page({ params, searchParams }: Props) {
-  const page = typeof searchParams.page === "string" ? searchParams.page : "1";
+  const page = getPage(searchParams);
+  // NOTE: NotFoundの挙動を確認するため、10ページ目以降ではnotFound()を返す
+  if (page > 10) {
+    notFound();
+  }
+
   const router = useRouter();
   return (
     <div>
